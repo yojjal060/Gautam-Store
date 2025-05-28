@@ -1,24 +1,24 @@
-import React from 'react'
-import {client} from '../lib/client'
-import { AllProducts } from '../components'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-const products = ({Allproducts}) => {
-    return (
-        <div className='Allproducts-container'>
-            {Allproducts?.map(prod => (
-                <AllProducts key={prod._id} allproducts={prod} />
-            ))}
-        </div>
-      )
-}
+const Products = ({ Allproducts }) => {
+  const router = useRouter();
+  useEffect(() => {
+    // This page is effectively deprecated as we now have separate Men/Women pages.
+    // Redirect to homepage or a more relevant general page if direct access is attempted.
+    router.replace("/");
+  }, [router]);
+
+  return null; // Or a loading indicator while redirecting
+};
 
 export const getServerSideProps = async () => {
-    const query = '*[_type == "product"]';
-    const Allproducts = await client.fetch(query);
-  
-    return {
-      props: { Allproducts }
-    }
-}
+  // This data fetching is no longer directly used by the page if it redirects.
+  // const { products } = await import("../data/products");
+  // const Allproducts = products;
+  return {
+    props: { Allproducts: [] }, // Return empty or minimal props
+  };
+};
 
-export default products
+export default Products;

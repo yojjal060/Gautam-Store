@@ -1,0 +1,67 @@
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { Product } from "../components";
+import { searchProducts, products } from "../data/products";
+
+const Search = () => {
+  const router = useRouter();
+  const { q } = router.query;
+  const [searchResults, setSearchResults] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Handle search when query parameter changes
+  useEffect(() => {
+    if (router.isReady && q) {
+      setLoading(true);
+      console.log("Searching for:", q);
+
+      // Get search results directly from our helper function
+      const results = searchProducts(q);
+      console.log("Search results:", results);
+      
+      setSearchResults(results);
+      setLoading(false);
+    }
+  }, [router.isReady, q]);
+
+  if (!router.isReady) return <div className="loading">Loading...</div>;
+  if (!q) {
+    return (
+      <div className="search-results">
+        <div className="subtitle">
+          <h2>Search Products</h2>
+          <p>Enter a search term to find products</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="search-results">
+      <div className="subtitle">
+        <h2>Search Results for "{q}"</h2>
+        <p>{searchResults.length} products found</p>
+      </div>
+
+      {loading ? (
+        <div className="loading">Loading...</div>
+      ) : searchResults.length > 0 ? (
+        <div className="products-container">
+          {searchResults.map((product) => (
+            <Product key={product._id} product={product} />
+          ))}
+        </div>
+      ) : (
+        <div className="no-results">
+          <p>No products found matching "{q}"</p>
+          <p>
+            Try different keywords or browse our{" "}
+            <a href="/products">products</a>
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Search;

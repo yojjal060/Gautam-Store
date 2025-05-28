@@ -1,24 +1,24 @@
-import React from 'react'
-import {client} from '../lib/client'
-import { AllProducts } from '../components'
+import React from "react";
+import { client } from "../lib/client";
+import { CategoryPage } from "../components";
 
-const female = ({AllFemaleProducts}) => {
-    return (
-        <div className='Allproducts-container'>
-            {AllFemaleProducts?.map(prod => (
-                <AllProducts key={prod._id} allproducts={prod} />
-            ))}
-        </div>
-      )
-}
+const Female = ({ AllFemaleProducts }) => {
+  return (
+    <CategoryPage
+      products={AllFemaleProducts}
+      title="Women's Modern Collection"
+    />
+  );
+};
 
 export const getServerSideProps = async () => {
-    const query = '*[category == "Female"]';
-    const AllFemaleProducts = await client.fetch(query);
+  // Import products from our local data instead of using Sanity
+  const { getProductsByCategory } = await import("../data/products");
+  const AllFemaleProducts = getProductsByCategory("Female");
 
-    return {
-      props: { AllFemaleProducts }
-    }
-}
+  return {
+    props: { AllFemaleProducts },
+  };
+};
 
-export default female
+export default Female;

@@ -1,24 +1,11 @@
-import React from 'react'
-import {client} from '../lib/client'
-import { AllProducts } from '../components'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-const kids = ({AllKidsProducts}) => {
-    return (
-        <div className='Allproducts-container'>
-            {AllKidsProducts ?.map(prod => (
-                <AllProducts key={prod._id} allproducts={prod} />
-            ))}
-        </div>
-      )
+// This page is now deprecated as the site focuses on Men and Women collections.
+export default function Kids() {
+  const router = useRouter();
+  useEffect(() => {
+    router.replace("/"); // Redirect to homepage or a relevant page
+  }, [router]);
+  return null;
 }
-
-export const getServerSideProps = async () => {
-    const query = '*[category == "Kids"]';
-    const AllKidsProducts = await client.fetch(query);
-
-    return {
-      props: { AllKidsProducts }
-    }
-}
-
-export default kids

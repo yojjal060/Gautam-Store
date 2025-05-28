@@ -1,0 +1,399 @@
+// Define standard care instructions
+const standardCare = [
+  { children: [{ text: "Machine wash cold" }] },
+  { children: [{ text: "Do not bleach" }] },
+  { children: [{ text: "Tumble dry low" }] },
+  { children: [{ text: "Iron on low heat" }] },
+];
+
+const delicateCare = [
+  { children: [{ text: "Hand wash only" }] },
+  { children: [{ text: "Do not bleach" }] },
+  { children: [{ text: "Lay flat to dry" }] },
+  { children: [{ text: "Do not iron" }] },
+];
+
+const traditionalCare = [
+  { children: [{ text: "Dry clean only" }] },
+  { children: [{ text: "Store in cool, dry place" }] },
+  { children: [{ text: "Handle with care" }] },
+  { children: [{ text: "Keep away from direct sunlight" }] },
+];
+
+export const products = [
+  // Male Products
+  {
+    _id: "prod1",
+    name: "Urban Fusion Tee",
+    price: 1200,
+    details:
+      "Premium cotton t-shirt with contemporary Nepali motifs and modern fit.",
+    category: "Male",
+    tags: "casual tshirt modern",
+    image: [
+      {
+        asset: {
+          _ref: "/images/urban_tee.jpg",
+        },
+      },
+    ],
+    slug: { current: "urban-fusion-tee" },
+    care: standardCare,
+  },
+  {
+    _id: "prod2",
+    name: "Classic Dhaka Pocket Shirt",
+    price: 1800,
+    details:
+      "Contemporary button-down shirt with Dhaka fabric pocket detail, perfect for casual occasions.",
+    category: "Male",
+    tags: "shirt casual traditional",    image: [
+      {
+        asset: {
+          _ref: "/images/dhaka_pocket_beige.jpg",
+        },
+      },
+    ],
+    slug: { current: "classic-dhaka-pocket-shirt" },
+    care: standardCare,
+  },  {
+    _id: "prod3",
+    name: "Mountain Trek Jacket",
+    price: 3500,
+    details:
+      "Weatherproof jacket inspired by the Himalayas. Perfect for outdoor adventures and urban styling.",
+    category: "Male",
+    tags: "outerwear jacket modern",    image: [
+      {
+        asset: {
+          _ref: "/images/trek_jacket.jpg",
+        },
+      },
+    ],
+    slug: { current: "mountain-trek-jacket" },
+    care: standardCare,
+  },  {
+    _id: "prod4",
+    name: "Contemporary Daura",
+    price: 2800,
+    details:
+      "Modern take on the traditional Daura, redesigned for comfort while maintaining cultural elements.",
+    category: "Male",
+    tags: "formal traditional fusion",
+    image: [
+      {
+        asset: {
+          _ref: "/images/contemporary_daura.jpg",
+        },
+      },
+    ],
+    slug: { current: "contemporary-daura" },
+    care: traditionalCare,
+  },  {
+    _id: "prod5",
+    name: "Urban Cargo Pants",
+    price: 2200,
+    details:
+      "Stylish cargo pants with multiple pockets, perfect for both city life and weekend adventures.",
+    category: "Male",
+    tags: "pants casual modern",
+    image: [
+      {
+        asset: {
+          _ref: "/images/cargo_pants.jpg",
+        },
+      },
+    ],
+    slug: { current: "urban-cargo-pants" },
+  },  {
+    _id: "prod6",
+    name: "Men's Designer Kurta",
+    price: 2700,
+    details:
+      "Modern interpretation of the classic kurta with slim fit and subtle embroidery.",
+    category: "Male",
+    tags: "kurta traditional fusion",
+    image: [
+      {
+        asset: {
+          _ref: "/images/designer_kurta.jpg",
+        },
+      },
+    ],    slug: { current: "mens-designer-kurta" },
+  },
+  // Female Products
+  {
+    _id: "prod7",
+    name: "Contemporary Choli Blouse",
+    price: 2500,
+    details:
+      "Modern redesign of the traditional Choli with comfortable stretchy fabric and subtle embellishments.",
+    category: "Female",
+    tags: "tops fusion traditional",
+    image: [
+      {
+        asset: {
+          _ref: "/images/choli_blouse.jpg",
+        },
+      },
+    ],
+    slug: { current: "contemporary-choli-blouse" },
+    care: delicateCare,
+  },
+  {
+    _id: "prod8",
+    name: "Himalayan Wool Sweater",
+    price: 2800,
+    details:
+      "Luxury wool sweater with contemporary geometric patterns inspired by Himalayan landscapes.",
+    category: "Female",
+    tags: "winter sweater modern",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "himalayan-wool-sweater" },
+    care: delicateCare,
+  },
+  {
+    _id: "prod9",
+    name: "Fusion Wrap Dress",
+    price: 3200,
+    details:
+      "Elegant wrap dress combining Western silhouette with traditional Nepali textile patterns.",
+    category: "Female",
+    tags: "dress formal fusion",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "fusion-wrap-dress" },
+    care: delicateCare,
+  },
+  {
+    _id: "prod10",
+    name: "Designer Dhaka Scarf",
+    price: 1500,
+    details:
+      "Versatile scarf made from authentic Dhaka fabric with contemporary patterns, perfect for any outfit.",
+    category: "Female",
+    tags: "accessories scarf",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "designer-dhaka-scarf" },
+  },
+  {
+    _id: "prod11",
+    name: "Modern Comfort Leggings",
+    price: 1800,
+    details:
+      "High-waisted leggings with patterns inspired by traditional Nepali art, perfect for yoga or casual wear.",
+    category: "Female",
+    tags: "casual leggings modern",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "modern-comfort-leggings" },
+  },
+  {
+    _id: "prod12",
+    name: "Contemporary Saree",
+    price: 4500,
+    details:
+      "Modern take on the traditional saree with fusion elements and easy-to-wear design.",
+    category: "Female",
+    tags: "saree formal traditional",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "contemporary-saree" },
+  },
+  // Kids Products
+  {
+    _id: "prod13",
+    name: "Kids Mountain Explorer Jacket",
+    price: 1900,
+    details:
+      "Colorful and durable jacket for children, inspired by the vibrant colors of Himalayan prayer flags.",
+    category: "Kids",
+    tags: "outerwear jacket modern",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "kids-mountain-explorer-jacket" },
+    care: standardCare,
+  },
+  {
+    _id: "prod14",
+    name: "Little Adventurer T-shirt",
+    price: 950,
+    details:
+      "Soft cotton t-shirt for kids with playful Himalayan animal designs.",
+    category: "Kids",
+    tags: "casual tshirt modern",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "little-adventurer-tshirt" },
+    care: standardCare,
+  },
+  {
+    _id: "prod15",
+    name: "Festival Celebration Outfit",
+    price: 2200,
+    details:
+      "Colorful modern outfit for children inspired by traditional festival clothing but designed for comfort.",
+    category: "Kids",
+    tags: "festival traditional fusion",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "festival-celebration-outfit" },
+    care: traditionalCare,
+  },
+  {
+    _id: "prod16",
+    name: "Mini Explorer Pants",
+    price: 1300,
+    details:
+      "Durable pants with reinforced knees, perfect for active kids who love to explore.",
+    category: "Kids",
+    tags: "pants casual modern",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "mini-explorer-pants" },
+  },
+  {
+    _id: "prod17",
+    name: "Kids Dhaka Accent Hoodie",
+    price: 1600,
+    details:
+      "Modern hoodie with traditional Dhaka fabric accents on pockets and hood, perfect for cool weather.",
+    category: "Kids",
+    tags: "hoodie fusion modern",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "kids-dhaka-accent-hoodie" },
+  },
+  // Accessories (General Category)
+  {
+    _id: "prod18",
+    name: "Himalayan Hemp Backpack",
+    price: 2200,
+    details:
+      "Eco-friendly backpack made from sustainable Himalayan hemp with modern design.",
+    category: "Accessories",
+    tags: "bags eco-friendly modern",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "himalayan-hemp-backpack" },
+    care: standardCare,
+  },
+  {
+    _id: "prod19",
+    name: "Mountain Sunset Watch",
+    price: 3800,
+    details:
+      "Elegant timepiece with face design inspired by Himalayan sunsets, genuine leather strap.",
+    category: "Accessories",
+    tags: "watch modern fashion",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "mountain-sunset-watch" },
+    care: delicateCare,
+  },
+  {
+    _id: "prod20",
+    name: "Urban Trekker Shoes",
+    price: 4200,
+    details:
+      "Stylish yet rugged footwear, perfect for city streets or mountain trails.",
+    category: "Accessories",
+    tags: "shoes footwear modern",
+    image: [
+      {
+        asset: {
+          _ref: "image-trek-jacket-jpg",
+        },
+      },
+    ],
+    slug: { current: "urban-trekker-shoes" },
+    care: standardCare,
+  },
+];
+
+// Helper function to get a product by its slug
+export const getProductBySlug = (slug) => {
+  return products.find((product) => product.slug.current === slug);
+};
+
+// Helper function to get products by category
+export const getProductsByCategory = (category) => {
+  return products.filter(
+    (product) => product.category.toLowerCase() === category.toLowerCase()
+  );
+};
+
+// Helper function to search products
+export const searchProducts = (query) => {
+  const searchTerm = query.toLowerCase();
+  return products.filter(
+    (product) =>
+      (product.name && product.name.toLowerCase().includes(searchTerm)) ||
+      (product.tags && product.tags.toLowerCase().includes(searchTerm)) ||
+      (product.category &&
+        product.category.toLowerCase().includes(searchTerm)) ||
+      (product.details && product.details.toLowerCase().includes(searchTerm))
+  );
+};

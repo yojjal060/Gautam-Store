@@ -1,24 +1,18 @@
-import React from 'react'
-import {client} from '../lib/client'
-import { AllProducts } from '../components'
+import { CategoryPage } from "../components"; // Assuming CategoryPage is used for male section too
 
-const male = ({AllMaleProducts}) => {
-    return (
-        <div className='Allproducts-container'>
-            {AllMaleProducts?.map(prod => (
-                <AllProducts key={prod._id} allproducts={prod} />
-            ))}
-        </div>
-      )
-}
+const Male = ({ AllMaleProducts }) => {
+  return (
+    <CategoryPage products={AllMaleProducts} title="Men's Modern Collection" /> // Updated Title
+  );
+};
 
 export const getServerSideProps = async () => {
-    const query = '*[category == "Male"]';
-    const AllMaleProducts = await client.fetch(query);
+  const { getProductsByCategory } = await import("../data/products");
+  const AllMaleProducts = getProductsByCategory("Male");
 
-    return {
-      props: { AllMaleProducts }
-    }
-}
+  return {
+    props: { AllMaleProducts },
+  };
+};
 
-export default male
+export default Male;

@@ -1,61 +1,62 @@
-import React from 'react'
-import Image from 'next/image'
-import event1 from '../src/assets/event1.png' 
-import event2 from '../src/assets/event2.png' 
-import event3 from '../src/assets/event3.png' 
+import React from "react";
+import Image from "next/image";
+import event1 from "../src/assets/event1.png";
+import event2 from "../src/assets/event2.png";
+import event3 from "../src/assets/event3.png";
 
 const EventsBanner = () => {
   return (
-    <section className='event-container'>
-      <div className='subtitle'>
-        <span>PROMOTIONS</span>
-        <h2>Our Promotions Events</h2>
+    <section className="event-container">
+      <div className="subtitle">
+        <span>STYLE ALERTS</span>
+        <h2>Fresh Drops & Exclusive Offers</h2>
       </div>
 
-      <div className='event-banner'>
-        <div className='event-banner-left'>
-          <div className='event-card'>
-            <div className='content'>
-              <h3>GET UP TO <span>60%</span></h3>
-              <p>For the summer season</p>
+      <div className="event-banner">
+        <div className="event-banner-left">
+          <div className="event-card">
+            <div className="content">
+              <h3>
+                NEW SEASON LAUNCH <span>UP TO 40% OFF</span>
+              </h3>
+              <p>Selected Modern Collection</p>
             </div>
-            <Image src={event1} alt='event' />
+            <Image src={event1} alt="Modern Fashion Event" />
           </div>
 
-          <div className='event-card'>
-            <h3>GET 30% Off</h3>
-            <p>USE PROMO CODE</p>
-            <button>DINEWEEKENDSALE</button>
+          <div className="event-card">
+            <h3>FIRST ORDER PERK</h3>
+            <p>USE CODE: WELCOME25</p>
+            <button>AASMODERN25</button>
           </div>
         </div>
 
-        <div className='event-banner-right'>
-          <div className='event-banner-right-1'>
-            <div className='details'>
-              <p>Flex Sweatshirt</p>
-              <div className='price'>
-                <span>$100.00</span>
-                <span>$75.00</span>
+        <div className="event-banner-right">
+          <div className="event-banner-right-1">
+            <div className="details">
+              <p>Nova Sculpted Blazer</p>
+              <div className="price">
+                <span>Rs.5500.00</span>
+                <span>Rs.4800.00</span>
               </div>
             </div>
-            <Image src={event2} alt='event' />
+            <Image src={event2} alt="Nova Sculpted Blazer Promotion" />
           </div>
 
-          <div className='event-banner-right-2'>
-            <div className='details'>
-              <p>Flex Push Button Bomber</p>
-              <div className='price'>
-                <span>$225.00</span>
-                <span>$190.00</span>
+          <div className="event-banner-right-2">
+            <div className="details">
+              <p>MetroFlex Blazer</p>
+              <div className="price">
+                <span>Rs.4500.00</span>
+                <span>Rs.3900.00</span>
               </div>
             </div>
-            <Image src={event3} alt='event' />
+            <Image src={event3} alt="MetroFlex Blazer Promotion" />
           </div>
         </div>
       </div>
-      
     </section>
-  )
-}
+  );
+};
 
-export default EventsBanner
+export default EventsBanner;
